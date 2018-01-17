@@ -63,16 +63,11 @@ function viewCart() {
   return cartString
 }
 
-cart= [ { apples: 82 }, { bananas: 56 } ];
-total();
-
 function total() {
   var total = 0;
   for(let i=0; i < cart.length; i++){
-    console.log(Number.parseInt(Object.values(cart[i]).toString()));
     total += Number.parseInt(Object.values(cart[i]).toString());
   }
-  console.log(total);
   return total
 }
 
