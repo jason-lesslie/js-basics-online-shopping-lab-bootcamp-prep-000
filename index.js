@@ -72,7 +72,16 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
+  var originalCartLength = cart.length;
+  for(let i=0; i < cart.length; i++){
+    if (item == Object.keys(cart[i]).toString()){
+      cart.slice(i, i+1);
+    }
+  }
+  if (originalCartLength == cart.length){
+    console.log("That item is not in your cart.");
+  }
+  return cart
 }
 
 function placeOrder(cardNumber) {
