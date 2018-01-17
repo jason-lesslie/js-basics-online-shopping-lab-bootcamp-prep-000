@@ -76,7 +76,7 @@ removeFromCart("apples");
 
 function removeFromCart(item) {
   //Object.prototype.hasOwnProperty()
-  if ("true" == cart.entries().hasOwnProperty(item)){
+  if ("true" == Object.entries(cart).hasOwnProperty(item)){
     delete cart[item];
   } else {
     console.log("That item is not in your cart.");
