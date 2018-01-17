@@ -56,10 +56,6 @@ function viewCart() {
         cartString += "."
       }
     }
-    //to remove the final comma and space ", "
-    cartString = cartString.slice(0, cartString.length - 2);
-    //to add a period "."
-    cartString += "."
   } else {
     var cartString = "Your shopping cart is empty.";
   }
