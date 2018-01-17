@@ -76,6 +76,9 @@ removeFromCart("apples");
 
 function removeFromCart(item) {
   //Object.prototype.hasOwnProperty()
+  console.log(Object.entries(cart).toString());
+  console.log(Object.entries(cart).toString().includes(item));
+  
   if ("true" == Object.entries(cart).toString().includes(item)){
     delete cart[item];
   } else {
