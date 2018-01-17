@@ -89,6 +89,11 @@ function removeFromCart(item) {
   return cart
 }
 
+//   /* test data below
+cart = [ { apples: 17 }, { bananas: 28 } ];
+placeOrder(1234);
+//   */
+
 //Your total cost is $71, which will be charged to the card 83296759.
 function placeOrder(cardNumber) {
   if (cardNumber === undefined) {
