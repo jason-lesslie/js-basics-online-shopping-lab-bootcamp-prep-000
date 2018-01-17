@@ -67,7 +67,7 @@ function total() {
   for(var item in cart){
     total += cart[item];
   }
-  
+  return total
 }
 
 function removeFromCart(item) {
