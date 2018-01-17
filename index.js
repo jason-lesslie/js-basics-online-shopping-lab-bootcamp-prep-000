@@ -65,11 +65,9 @@ function viewCart() {
 
 function total() {
   var total;
-  for(var item in cart){
-    console.log(cart[item])
-    total += cart[item];
+  for(let i=0; i < cart.length; i++){
+    total += Object.values(cart[i]).toString();
   }
-  console
   return total
 }
 
