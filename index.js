@@ -72,13 +72,10 @@ function total() {
 }
 
 function removeFromCart(item) {
-  var originalCartLength = cart.length;
-  for(let i=0; i < cart.length; i++){
-    if (item == Object.keys(cart[i]).toString()){
-      cart.slice(i-1, i);
-    }
-  }
-  if (originalCartLength == cart.length){
+  //Object.prototype.hasOwnProperty()
+  if ("true" == cart.hasOwnProperty(item)){
+    delete cart[item];
+  } else {
     console.log("That item is not in your cart.");
   }
   return cart
