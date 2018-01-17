@@ -63,6 +63,9 @@ function viewCart() {
   return cartString
 }
 
+cart= [ { apples: 82 }, { bananas: 56 } ];
+total();
+
 function total() {
   var total;
   for(let i=0; i < cart.length; i++){
