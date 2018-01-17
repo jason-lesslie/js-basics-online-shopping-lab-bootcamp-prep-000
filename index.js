@@ -71,6 +71,9 @@ function total() {
   return total
 }
 
+cart = [ { apples: 99 }, { bananas: 31 } ];
+removeFromCart(apples);
+
 function removeFromCart(item) {
   //Object.prototype.hasOwnProperty()
   if ("true" == cart.hasOwnProperty(item)){
