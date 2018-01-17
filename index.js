@@ -76,7 +76,6 @@ removeFromCart("apples");
 
 function removeFromCart(item) {
   var originalCartLength = cart.length;
-  console.log(cart)
   for(let i=0; i < cart.length; i++){
     if (item == Object.keys(cart[i]).toString()){
       cart.splice(i, 1);
@@ -85,7 +84,6 @@ function removeFromCart(item) {
   if (originalCartLength == cart.length){
     console.log("That item is not in your cart.");
   }
-  console.log(cart)
   return cart
 }
 
