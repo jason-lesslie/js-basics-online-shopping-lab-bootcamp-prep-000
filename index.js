@@ -42,24 +42,24 @@ viewCart();
 function viewCart() {
   console.log(cart)
   console.log(cart.length)
-  if (cart.length > 2){
+  if (cart.length > 0){
     var cartString = "In your cart, you have "
     for(let i=0; i < cart.length; i++){
-      cartString += Object.keys(cart[i]).toString() + " at $" + Object.values(cart[i]).toString() + ", ";
+      cartString += Object.keys(cart[i]).toString() + " at $" + Object.values(cart[i]).toString();
       if (cart.length == 2 & i == 0){
         cartString += " and "
-      } else if (cart.length != 2 & i == cart.length-1) {
+      } else if (cart.length > 2 & i == cart.length-2) {
         cartString += ", and "
+      } else if (cart.length > 2 & i < cart.length-2) {
+        cartString += ", "
+      } else if (i == cart.length-1) {
+        cartString += "."
       }
     }
     //to remove the final comma and space ", "
     cartString = cartString.slice(0, cartString.length - 2);
     //to add a period "."
     cartString += "."
-  } elseif (cart.length == 2){
-    var cartString = "In your cart, you have " + Object.keys(cart[0]).toString() + " at $" + Object.values(cart[0]).toString()
-                      + " and " + Object.keys(cart[1]).toString() + " at $" + Object.values(cart[1]).toString() + ".";
-    }
   } else {
     var cartString = "Your shopping cart is empty.";
   }
