@@ -9,12 +9,58 @@ function setCart(c) {
   return cart;
 }
 
-function addToCart(item) {
- // write your code here
+addToCart("apples");
+addToCart("bananas");
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  //The maximum is inclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function addToCart(item) {
+  var cartObject = {[item]:getRandomIntInclusive(1, 100)};
+  //add local "cartObject" to global array "cart"
+  cart.push(cartObject);
+  console.log(`${item} has been added to your cart.`);
+
+  /*
+  console.log(cart);
+  console.log(cart.length);
+  console.log(cartObject);
+  console.log(Object.keys(cart[0]).toString());
+  console.log(Object.values(cart[0]).toString());
+  */
+
+  return cart
+}
+
+//In your cart, you have bananas at $17,
+//pancake batter at $5, and eggs at $49.
+viewCart();
 function viewCart() {
-  // write your code here
+  console.log(cart)
+  console.log(cart.length)
+  if (cart.length > 2){
+    var cartString = "In your cart, you have "
+    for(let i=0; i < cart.length; i++){
+      cartString += Object.keys(cart[i]).toString() + " at $" + Object.values(cart[i]).toString() + ", ";
+    }
+    //to remove the final comma and space ", "
+    cartString = cartString.slice(0, cartString.length - 2);
+    //to add a period "."
+    cartString += "."
+  } elseif (cart.length == 2){
+    var cartString = "In your cart, you have " + Object.keys(cart[0]).toString() + " at $" + Object.values(cart[0]).toString() 
+                      + " and " + Object.keys(cart[1]).toString() + " at $" + Object.values(cart[1]).toString() + ".";
+    }
+  } else {
+    var cartString = "Your shopping cart is empty.";
+  }
+
+  console.log(cartString);
+  return cartString
 }
 
 function total() {
