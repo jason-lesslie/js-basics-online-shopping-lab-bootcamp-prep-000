@@ -71,9 +71,12 @@ function total() {
   return total
 }
 
+cart = [ { apples: 17 }, { bananas: 28 } ];
+removeFromCart("apples")
+
 function removeFromCart(item) {
   var originalCartLength = cart.length;
-  
+
   for(let i=0; i < cart.length; i++){
     if (item == Object.keys(cart[i]).toString()){
       cart.splice(i, 1);
