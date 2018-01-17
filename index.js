@@ -72,6 +72,7 @@ function total() {
     console.log(Object.values(cart[i]).toString().valueOf());
     total += Object.values(cart[i]).toString().valueOf();
   }
+  console.log(total);
   return total
 }
 
