@@ -67,7 +67,7 @@ cart= [ { apples: 82 }, { bananas: 56 } ];
 total();
 
 function total() {
-  var total;
+  var total = 0;
   for(let i=0; i < cart.length; i++){
     console.log(Object.values(cart[i]).toString().valueOf());
     total += Object.values(cart[i]).toString().valueOf();
