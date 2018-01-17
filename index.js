@@ -69,8 +69,8 @@ total();
 function total() {
   var total = 0;
   for(let i=0; i < cart.length; i++){
-    console.log(Object.valueOf(cart[i]));
-    total += Object.valueOf(cart[i]);
+    console.log(Number.parseInt(Object.values(cart[i]).toString().valueOf()));
+    total += Number.parseInt(Object.values(cart[i]).toString().valueOf());
   }
   console.log(total);
   return total
