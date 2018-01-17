@@ -46,13 +46,18 @@ function viewCart() {
     var cartString = "In your cart, you have "
     for(let i=0; i < cart.length; i++){
       cartString += Object.keys(cart[i]).toString() + " at $" + Object.values(cart[i]).toString() + ", ";
+      if (cart.length == 2 & i == 0){
+        cartString += " and "
+      } else if (cart.length != 2 & i == cart.length-1) {
+        cartString += ", and "
+      }
     }
     //to remove the final comma and space ", "
     cartString = cartString.slice(0, cartString.length - 2);
     //to add a period "."
     cartString += "."
   } elseif (cart.length == 2){
-    var cartString = "In your cart, you have " + Object.keys(cart[0]).toString() + " at $" + Object.values(cart[0]).toString() 
+    var cartString = "In your cart, you have " + Object.keys(cart[0]).toString() + " at $" + Object.values(cart[0]).toString()
                       + " and " + Object.keys(cart[1]).toString() + " at $" + Object.values(cart[1]).toString() + ".";
     }
   } else {
