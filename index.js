@@ -71,8 +71,10 @@ function total() {
   return total
 }
 
+/* test data below
 cart = [ { apples: 17 }, { bananas: 28 } ];
 removeFromCart("apples");
+*/
 
 function removeFromCart(item) {
   var originalCartLength = cart.length;
@@ -87,6 +89,12 @@ function removeFromCart(item) {
   return cart
 }
 
+//Your total cost is $71, which will be charged to the card 83296759.
 function placeOrder(cardNumber) {
-  // write your code here
+  if (cardNumber === undefined) {
+    console.log("Sorry, we don't have a credit card on file for you.")
+  } else {
+    console.log(`Your total cost is $${total}, which will be charged to the card ${cardNumber}.`)
+    cart = [];
+  }
 }
