@@ -65,8 +65,10 @@ function viewCart() {
 function total() {
   var total;
   for(var item in cart){
+    console.log(cart[item])
     total += cart[item];
   }
+  console
   return total
 }
 
