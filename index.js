@@ -59,7 +59,7 @@ function viewCart() {
   } else {
     var cartString = "Your shopping cart is empty.";
   }
-  console.log(cartString)
+  console.log(cartString);
   return cartString
 }
 
