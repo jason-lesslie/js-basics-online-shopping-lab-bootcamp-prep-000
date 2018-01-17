@@ -71,17 +71,15 @@ function total() {
   return total
 }
 
-cart = [ { apples: 99 }, { bananas: 31 } ];
-removeFromCart("apples");
-
 function removeFromCart(item) {
-  //Object.prototype.hasOwnProperty()
-  console.log(Object.entries(cart).toString());
-  console.log(Object.entries(cart).toString().includes(item));
+  var originalCartLength = cart.length;
   
-  if ("true" == Object.entries(cart).toString().includes(item)){
-    delete cart[item];
-  } else {
+  for(let i=0; i < cart.length; i++){
+    if (item == Object.keys(cart[i]).toString()){
+      cart.splice(i, 1);
+    }
+  }
+  if (originalCartLength == cart.length){
     console.log("That item is not in your cart.");
   }
   return cart
